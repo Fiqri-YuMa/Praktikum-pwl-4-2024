@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\Role;
 use App\Models\User;
-use Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash as FacadesHash;
 
 class GeneralSeeder extends Seeder
 {
@@ -28,7 +28,7 @@ class GeneralSeeder extends Seeder
         $pustakawan = User::create([
             'name' => 'Pustakawan 1',
             'email' => 'pustakawan1@gmail.com',
-            'password' => Hash::make('password')
+            'password' => FacadesHash::make('password')
         ]);
 
         $pustakawan->assignRole('pustakawan');
@@ -36,7 +36,7 @@ class GeneralSeeder extends Seeder
         $mahasiswa = User::create([
             'name' => 'Mahasiswa 1',
             'email' => 'mahasiswa1@gmail.com',
-            'password' => Hash::make('password')
+            'password' => FacadesHash::make('password')
         ]);
         
         $mahasiswa->assignRole('mahasiswa');
